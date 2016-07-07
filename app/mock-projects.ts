@@ -1,5 +1,5 @@
-    import { Hero } from './hero';
-    export var HEROES: Hero[] = [
+    import { Project } from './project';
+    export var PROJECTS: Project[] = [
       {id: 11, name: 'Mr. Nice'},
       {id: 12, name: 'Narco'},
       {id: 13, name: 'Bombasto'},

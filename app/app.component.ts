@@ -1,16 +1,16 @@
     import { Component } from '@angular/core';
     import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
-    import { DashboardComponent }  from './dashboard.component';
-    import { HeroesComponent }     from './heroes.component';
-    import { HeroDetailComponent } from './hero-detail.component';
-    import { HeroService }         from './hero.service';
+    import { DashboardComponent }     from './dashboard.component';
+    import { ProjectsComponent }      from './projects.component';
+    import { ProjectDetailComponent } from './project-detail.component';
+    import { ProjectService }         from './project.service';
     @Component({
       selector: 'my-app',
       template: `
         <h1>{{title}}</h1>
         <nav>
           <a [routerLink]="['Dashboard']">Dashboard</a>
-          <a [routerLink]="['Heroes']">Heroes</a>
+          <a [routerLink]="['Projects']">Projects</a>
         </nav>
         <router-outlet></router-outlet>
       `,
@@ -18,14 +18,14 @@
       directives: [ROUTER_DIRECTIVES],
       providers: [
         ROUTER_PROVIDERS,
-        HeroService,
+        ProjectService,
       ]
     })
     @RouteConfig([
       { path: '/dashboard',  name: 'Dashboard',  component: DashboardComponent, useAsDefault: true },
-      { path: '/detail/:id', name: 'HeroDetail', component: HeroDetailComponent },
-      { path: '/heroes',     name: 'Heroes',     component: HeroesComponent }
+      { path: '/detail/:id', name: 'ProjectDetail', component: ProjectDetailComponent },
+      { path: '/projects',     name: 'Projects',     component: ProjectsComponent }
     ])
     export class AppComponent {
-      title = 'Tour of Heroes';
+      title = 'Top Projects';
     }
